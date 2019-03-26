@@ -1,3 +1,7 @@
+(* ::Package:: *)
+
+pwd = $ScriptCommandLine[[2]];
+
 hexifyColor[color_RGBColor] := 
  StringJoin["#", 
   ToUpperCase@IntegerString[Round[Level[color, 1]*255], 16, 2]];
@@ -12,8 +16,8 @@ changeColor[file_, i_] :=
   Export[file, txtNew, "String"]];
 
 Print["WolframScript Process mdl1..."];
-files = FileNames["*.dot", "/Users/xzhou/Downloads/decision tree/mdl1", 1];
-dat = Partition[BinaryReadList["/Users/xzhou/Downloads/decision tree/DecisionTreeMat.dat", "Real32"], 
+files = FileNames["*.dot", FileNameJoin[{pwd,"mdl1"}], 1];
+dat = Partition[BinaryReadList[FileNameJoin[{pwd,"DecisionTreeMat.dat"}], "Real32"], 
    10];
 colormapping = 
   Table[hexifyColor[ColorData["TemperatureMap"]@#] & /@ 
@@ -22,8 +26,8 @@ colormapping =
 Do[changeColor[files[[i]], i], {i, 10}];
 
 Print["WolframScript Process mdl3..."];
-files = FileNames["*.dot", "/Users/xzhou/Downloads/decision tree/mdl3", 1];
-dat = Partition[BinaryReadList["/Users/xzhou/Downloads/decision tree/DecisionTreeMat_mdl3.dat", "Real32"], 
+files = FileNames["*.dot", FileNameJoin[{pwd,"mdl3"}], 1];
+dat = Partition[BinaryReadList[FileNameJoin[{pwd,"DecisionTreeMat_mdl3.dat"}], "Real32"], 
    10];
 colormapping = 
   Table[hexifyColor[ColorData["TemperatureMap"]@#] & /@ 
@@ -32,8 +36,8 @@ colormapping =
 Do[changeColor[files[[i]], i], {i, 10}];
 
 Print["WolframScript Process mdl5..."];
-files = FileNames["*.dot", "/Users/xzhou/Downloads/decision tree/mdl5", 1];
-dat = Partition[BinaryReadList["/Users/xzhou/Downloads/decision tree/DecisionTreeMat_mdl5.dat", "Real32"], 
+files = FileNames["*.dot", FileNameJoin[{pwd,"mdl5"}], 1];
+dat = Partition[BinaryReadList[FileNameJoin[{pwd,"DecisionTreeMat_mdl5.dat"}], "Real32"], 
    10];
 colormapping = 
   Table[hexifyColor[ColorData["TemperatureMap"]@#] & /@ 
