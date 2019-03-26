@@ -3,7 +3,8 @@ for mdl in ['mdl1','mdl3','mdl5']:
 	print 'Execute inf2dot.pl... now in %s' % mdl
 	os.system('perl inf2dot.pl ./{0}/tree_sd_cmp.inf ./{0}/Tree'.format(mdl))
 
-os.system('wolframscript -file ChangeColor.wl')
+pwd = os.getcwd()
+os.system('wolframscript -file ChangeColor.wl %s' % pwd)
 
 for mdl in ['mdl1','mdl3','mdl5']:
 	for file in os.listdir(mdl):
