@@ -1,5 +1,3 @@
-(* ::Package:: *)
-
 pwd = $ScriptCommandLine[[2]];
 
 hexifyColor[color_RGBColor] := 
