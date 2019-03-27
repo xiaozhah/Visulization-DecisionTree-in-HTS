@@ -11,9 +11,12 @@
 
 ### 叶子节点颜色统一
 visual1文件夹
->运行`python gen_pdf.pdf`即可，注意需要graphviz库
+>运行`python gen_pdf.pdf`即可
+
+依赖软件graphviz库
 
 ### 叶子节点按值上色
 visual2文件夹(叶子节点颜色根据落到该叶子节点音素单元的数量上色)
->运行`python gen_pdf.pdf`即可，注意需要graphviz库和mathematica
-（其中ChangeColor.wl需要设置绝对路径，因为相对路径搞不清在wl文件中怎么设置）
+>运行`python gen_pdf.pdf`即可
+
+依赖软件 graphviz库和mathematica
